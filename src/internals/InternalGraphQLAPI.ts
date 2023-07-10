@@ -8,7 +8,7 @@ import {
 	GraphQLError,
 	OperationTypeNode,
 } from 'graphql';
-import fetchAdapter  from '@vespaiach/axios-fetch-adapter';
+import fetchAdapter from '@vespaiach/axios-fetch-adapter';
 import Observable from 'zen-observable-ts';
 import {
 	Amplify,
@@ -247,6 +247,7 @@ export class InternalGraphQLAPIClass {
 				this.createInstanceIfNotCreated();
 				const cancellableToken = this._api.getCancellableToken();
 				const initParams = {
+					adapter: this._options.adapter,
 					cancellableToken,
 					withCredentials: this._options.withCredentials,
 				};
